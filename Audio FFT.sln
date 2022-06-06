@@ -7,12 +7,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Audio FFT", "Audio FFT\Audi
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Build|x64 = Build|x64
+		Build|x86 = Build|x86
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{292B99C2-29B0-43C5-959D-4D1D8EAB51DA}.Build|x64.ActiveCfg = Build|x64
+		{292B99C2-29B0-43C5-959D-4D1D8EAB51DA}.Build|x64.Build.0 = Build|x64
+		{292B99C2-29B0-43C5-959D-4D1D8EAB51DA}.Build|x86.ActiveCfg = Build|Win32
+		{292B99C2-29B0-43C5-959D-4D1D8EAB51DA}.Build|x86.Build.0 = Build|Win32
 		{292B99C2-29B0-43C5-959D-4D1D8EAB51DA}.Debug|x64.ActiveCfg = Debug|x64
 		{292B99C2-29B0-43C5-959D-4D1D8EAB51DA}.Debug|x64.Build.0 = Debug|x64
 		{292B99C2-29B0-43C5-959D-4D1D8EAB51DA}.Debug|x86.ActiveCfg = Debug|Win32

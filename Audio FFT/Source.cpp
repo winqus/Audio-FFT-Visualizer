@@ -429,9 +429,9 @@ private:
 	{
 		// initialize whatever has to be done before the capture starts
 		cout << ">>> Recording started with device: " << this->getDevice() << "\n";
-		cout << "Proccessing interval is set to: " << (sf::Int32)std::round((m_sampleSize / (double)this->getSampleRate()) * 1000.)+1 << "ms\n";
+		cout << "Proccessing interval is set to: " << (sf::Int32)std::round((m_sampleSize / (double)this->getSampleRate()) * 1000.)+5 << "ms\n";
 		this->setProcessingInterval(sf::milliseconds(
-			(sf::Int32)std::round( (m_sampleSize / (double)this->getSampleRate()) * 1000.) + 1
+			(sf::Int32)std::round( (m_sampleSize / (double)this->getSampleRate()) * 1000.) + 5
 		));
 		
 		// return true to start the capture, or false to cancel it
