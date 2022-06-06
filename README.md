@@ -1,1 +1,1 @@
-Audio Visualizer with FFT
+Audio Visualizer with FFT (Fast Fourier Transform)
