@@ -511,37 +511,6 @@ public:
 	}
 };
 
-
-
-void DFT(const int sampleCount, const int sampleRate, const double* samples, double* output) {
-
-	/*** X1 x1 example ***/
-		//std::complex<double> z1 = 1i;
-		//cout << 0.707 * std::exp(-1i * 2. * M_PI * (1. * 1 / 8) ) << endl;
-	/**********************/
-
-	using namespace std::complex_literals;
-
-	std::complex<double>* X = new std::complex<double>[sampleRate / 2 + 1]; \
-
-	for (int k = 0; k < sampleRate / 2; k++) {
-		//cout << k << "k\n";
-		std::complex<double> Xk = 0.;
-		for (int n = 0; n < sampleCount; n++) {
-			//Xk += samples[n] * (std::exp(-1i * 2. * M_PI * ((double)k * n / sampleRate)));
-			Xk += samples[n] * (std::exp(-1i * 2. * M_PI * ((double)k * n / sampleCount)));
-		}
-		//X[k] = ((Xk / (double)sampleCount));
-		X[k] = Xk;
-		// 
-		//X[k] = sqrt( pow(std::real(X[k]), 2) + pow(std::imag(X[k]), 2));
-		output[k] = std::abs(X[k]);
-	}
-
-	delete[] X;
-}
-
-
 unsigned ReverseBitOrder(unsigned int value, int bitCount) {
 	unsigned newVal = 0;
 	for (; bitCount > 0; bitCount--, value >>= 1) {
@@ -583,7 +552,6 @@ void FFT(std::complex<double>* samples, std::complex<double>* output, int log2_s
 
 	for (size_t i = 0; i < size; i++) {
 		output[i] = X[i];
-		//output[i] = X[i] * (2. / size);
 	}
 
 	delete[] X;
@@ -774,8 +742,8 @@ int main() {
 		
 		Hanning(complexInput, bufferSize); //// Apply window function to samples
 
-		//fftw_execute(plan); //// faster, for future use (+uncomment plan and cleanup)
-		FFT(complexInput, complexOutput, log2(bufferSize)); //// slower, for learning purposes
+		//fftw_execute(plan); //// for future use (+uncomment plan and cleanup)
+		FFT(complexInput, complexOutput, log2(bufferSize));
 
 		double maxBin = 1.;
 		for (size_t i = 0; i < bufferSize; i++) {
